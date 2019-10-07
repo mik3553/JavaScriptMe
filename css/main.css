@@ -130,3 +130,13 @@ main > section {
 #register-form {
     display: none;
 }
+
+.register-form-initial {
+    display: initial;
+}
+.register-form-none {
+    display: none;
+}
+
+
+

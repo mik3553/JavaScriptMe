@@ -1,23 +1,52 @@
-window.onload = function() {
+window.addEventListener("DOMContentLoaded", (event) =>  {
 
     // --------------------- STEP 1 ---------------------
         // Par defaut le formulaire de connection est afficher, le formulaire d'inscription quand a lui est en 'display: none';
         // FAITE EN SORTE QUE AU CLICK SUR LES BUTTONS POSSEDANT LA CLASS 'square-button-empty'
             // DE MASQUER LE LOGIN FORM POUR AFFICHER LE REGISTER FORM, ET INVERSEMENT <->
+        const buttons = document.getElementsByClassName("square-button-empty");
+        const contactForms = document.querySelectorAll(".contact-form");
+
+        // const parentNode = document.querySelector("section");
+        const connexionForms      = document.querySelector("#connexion-form");
+        const inscriptionForms    = document.querySelector("#register-form");
 
 
+        for (let i = 0; i < buttons.length; i++) {
+        console.log(buttons)
 
+            buttons[i].addEventListener("click", function(e){
+            e.preventDefault();
 
-
-
-
-
+                if (e.target.getAttribute("data-button")=="0"){
+                connexionForms.style.display = "none";
+                inscriptionForms.style.display = "initial";
+                }
+                else if(e.target.getAttribute("data-button")=="1"){
+                inscriptionForms.style.display = "none";
+                connexionForms.style.display = "initial";
+                }
+            })
+        }
+            
+        
     // --------------------- STEP 2 ----------------------
         // maintenant que l'on peut afficher nos 2 formulaires l'intéret serait maintenant qu'ils fonctionnent ! pour cela :
         // FAITE EN SORTE QUE AU CLICK SUR LES BUTTONS POSSEDANT LA CLASS 'square-button' DE :
             //  1. récuperer la valeur de tout les champs de formulaires
             //  2. vérifier que le 'username' fait au moins 5 caracteres alphanumérique
             //  3. vérifier que le password fait au moins 8 caracteres et contient a minima une majuscule/minuscule ainsi qu'un entier (integer)
+
+        const squareButton = document.querySelectorAll(".square-button");
+        const input        = document.querySelectorAll(".form-control").value;
+
+
+        // for (var i = 0; i <squareButton.length ; i++){
+        //     squareButton.addEventListener("click", function(){
+
+        //     })
+        // } 
+
 
 
 
@@ -56,4 +85,4 @@ window.onload = function() {
             // 2. Si les données saisies correspondent a celles présentes dans le 'localStorage', rediriger l'utilisateur sur la page 'home.html'
 
 
-}
+});
