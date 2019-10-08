@@ -1,5 +1,14 @@
 window.addEventListener("DOMContentLoaded", (event) =>  {
 
+    function getInputValue(inputLogIn){           
+            for (let i = 0 ; i < inputLogIn.length ;i++) {
+            let inputValue = inputLogIn[i].value;
+            console.log(inputValue);
+
+            }
+
+        }
+
     // --------------------- STEP 1 ---------------------
         // Par defaut le formulaire de connection est afficher, le formulaire d'inscription quand a lui est en 'display: none';
         // FAITE EN SORTE QUE AU CLICK SUR LES BUTTONS POSSEDANT LA CLASS 'square-button-empty'
@@ -13,18 +22,18 @@ window.addEventListener("DOMContentLoaded", (event) =>  {
 
 
         for (let i = 0; i < buttons.length; i++) {
-        console.log(buttons)
+        
 
             buttons[i].addEventListener("click", function(e){
             e.preventDefault();
 
                 if (e.target.getAttribute("data-button")=="0"){
                 connexionForms.style.display = "none";
-                inscriptionForms.style.display = "initial";
+                inscriptionForms.style.display = "flex";
                 }
                 else if(e.target.getAttribute("data-button")=="1"){
                 inscriptionForms.style.display = "none";
-                connexionForms.style.display = "initial";
+                connexionForms.style.display = "flex";
                 }
             })
         }
@@ -37,22 +46,45 @@ window.addEventListener("DOMContentLoaded", (event) =>  {
             //  2. vérifier que le 'username' fait au moins 5 caracteres alphanumérique
             //  3. vérifier que le password fait au moins 8 caracteres et contient a minima une majuscule/minuscule ainsi qu'un entier (integer)
 
-        const squareButton = document.querySelectorAll(".square-button");
-        const input        = document.querySelectorAll(".form-control").value;
+        
 
+        const logInButton = document.querySelector("#logIn");
+        const signUpButton = document.querySelector("#signUp");
 
-        // for (var i = 0; i <squareButton.length ; i++){
-        //     squareButton.addEventListener("click", function(){
+        const inputLogIn   = document.querySelectorAll(".formLog-control");
+        const inputSignIn  = document.querySelectorAll(".formSignIn-control");
 
-        //     })
-        // } 
+        // ma  fonction qui recupere les input.value
+        
+        logInButton.addEventListener("click", function(e){
+            e.preventDefault();
+            getInputValue(inputLogIn);
 
+        })
+        signUpButton.addEventListener("click", function(e){
+            e.preventDefault();
+            getInputValue(inputSignIn);
 
+            let userName = document.querySelector("#userName").value;
+            if (userName.length < 5) {
+                alert("Veuillez saisir 5 charactére au minimum pour votre username");
+            }
 
+            let passWord = document.querySelector("#passWord").value;
+            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{10,12}$/;
+            // if (passWord.length < 8 ){
+            // alert("Veuillez saisir 8 charactére au minimum pour votre password");
+            // }
+            if (passWord =! regex.test(passWord)) {
+            alert("Veuillez saisir au moin une lettre majuscule et un chiffre et huit caractére au minimum");
+            }
 
+        })
 
+                
+    
 
-
+    
     // --------------------- STEP 3 -------------------------
         // une fois nos saisies utilisateurs stocker dans des variables faite en sorte de :
         // A L'INSCRIPTION :

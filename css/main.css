@@ -46,7 +46,7 @@ main > section {
   padding: 50px;
 }
 
-.contact-form .form-block {
+.contact-form .form-block .formLog-control .formSignIn-control {
     padding: 15px;
 }
 .contact-form .input-block {
@@ -72,7 +72,7 @@ main > section {
   outline: 0;
 }
 
-.contact-form .input-block .form-control {
+.contact-form .input-block .form-control .formLog-control .formSignIn-control {
   background-color: transparent;
   padding: 0;
   border: none;
@@ -131,12 +131,6 @@ main > section {
     display: none;
 }
 
-.register-form-initial {
-    display: initial;
-}
-.register-form-none {
-    display: none;
-}
 
 
 
