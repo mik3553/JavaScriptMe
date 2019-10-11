@@ -16,3 +16,32 @@ function readFile(file, done) {
     }
     rawFile.send(null);
 }
+
+
+// function getInputValue(inputLogIn){           
+//     for (let i = 0 ; i < inputLogIn.length ;i++) {
+//         let inputValue = inputLogIn[i].value;
+//         console.log(inputValue);
+//         }
+// }
+
+function checkUserName(username){
+
+    if (username.length < 5)
+        return false;
+    else
+        return true;
+}
+
+function checkPass(password){
+
+    let passRegex = /^(?=.{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$/;
+    if (!passRegex.test(password))
+        return false;
+    else
+        return true;
+}
+
+function showAlert(message){
+    alert(message);
+}

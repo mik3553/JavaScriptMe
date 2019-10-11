@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>JavaScriptMe</title>
         <link rel="stylesheet" href="css/main.css">
-        <script type="text/javascript" src="js/index.js"></script>
+
     </head>
     <body>
         <main>
@@ -43,7 +43,7 @@
                           </div>
 
                           <div class="input-block">
-                              <input type="email" placeholder="Enter your email" class="formSignIn-control">
+                              <input id="eMail" type="email" placeholder="Enter your email" class="formSignIn-control">
                           </div>
 
                           <div class="input-block">
@@ -51,7 +51,7 @@
                           </div>
 
                           <div class="input-block">
-                            <input type="password" placeholder="Confirm your password" class="formSignIn-control">
+                            <input type="password" placeholder="Confirm your password" class="formSignIn-control"  id="passWordC">
                           </div>
                       </div>
 
@@ -64,7 +64,12 @@
                           <button data-button="1"  type="button" class="square-button-empty">Log in</button>
                       </div>
                     </form>
+                    <h4 id="userStore"></h4>
             </section>
         </main>
+
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/user.class.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
