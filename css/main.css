@@ -131,6 +131,11 @@ main > section {
     display: none;
 }
 
+.sectionFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 
 
